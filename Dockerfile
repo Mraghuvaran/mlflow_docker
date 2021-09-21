@@ -1,9 +1,20 @@
-FROM continuumio/miniconda:4.5.4
+FROM python:3.8-slim-buster
 
-RUN pip install mlflow>=1.0 \
-    && pip install azure-storage-blob==12.3.0 \
-    && pip install numpy==1.14.3 \
-    && pip install scipy \
-    && pip install pandas==0.22.0 \
-    && pip install scikit-learn==0.19.1 \
-    && pip install cloudpickle
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+# Install dependencies:
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+
+ENV clientId={$clientId}
+ENV studyId={$studyId}
+ENV nEXP={$nEXP}
+
+
+# Run the application:
+
+COPY . .
+CMD [""]
