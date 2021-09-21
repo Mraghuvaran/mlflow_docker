@@ -7,7 +7,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 # Install dependencies:
 COPY requirements.txt .
 
-RUN apk --update --no-cache add \
+RUN apt --update --no-cache add \
     gcc build-base freetype-dev libpng-dev openblas-dev g++ musl-dev && \
     ln -s /usr/include/locale.h /usr/include/xlocale.h
 RUN pip install -r requirements.txt
