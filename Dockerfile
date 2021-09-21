@@ -17,4 +17,4 @@ ENV nEXP={$nEXP}
 # Run the application:
 
 COPY . .
-CMD [""]
+CMD ["mlflow run examples/docker -P alpha=0.5"]
