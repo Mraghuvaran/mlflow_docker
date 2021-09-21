@@ -7,7 +7,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 # Install dependencies:
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt  && pip install mlflow
 
 
 ENV clientId={$clientId}
