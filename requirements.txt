@@ -1,0 +1,7 @@
+mlflow>=1.0
+azure-storage-blob==12.3.0
+numpy==1.14.3
+scipy
+pandas==0.22.0 
+scikit-learn==0.19.1 
+cloudpickle
